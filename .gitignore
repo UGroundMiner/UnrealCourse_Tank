@@ -75,3 +75,8 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+BattleTank/Content/StarterContent/
+BattleTank/Saved/Autosaves/
+BattleTank/Saved/Backup/
+BattleTank/Intermediate/
+BattleTank/Content/
