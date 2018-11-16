@@ -25,8 +25,6 @@ protected:
 
 
 private:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -35,5 +33,5 @@ private:
 	ATank();
 	
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000;
+	float LaunchSpeed = 7000;
 };
