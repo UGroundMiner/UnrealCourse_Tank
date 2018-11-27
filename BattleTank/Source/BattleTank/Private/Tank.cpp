@@ -12,6 +12,7 @@ ATank::ATank()
 
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
 
+
 }
 
 // Called when the game starts or when spawned
@@ -34,13 +35,11 @@ void ATank::AimAt(FVector HitLocation)
 
 void ATank::Fire()
 {
-	auto Time = GetWorld()->GetTimeSeconds();
-	UE_LOG(LogTemp, Warning, TEXT("%f: tank fires"), Time)
-
 	if (!Barrel) { return; }
 
 	// Spawn a projectile at the socket location on the barrel
-	GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("BarrelEnd")), Barrel->GetSocketRotation(FName("BarrelEnd")));
+	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("BarrelEnd")), Barrel->GetSocketRotation(FName("BarrelEnd")));
+	Projectile->LaunchProjectile(LaunchSpeed);
 }
 
 void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
