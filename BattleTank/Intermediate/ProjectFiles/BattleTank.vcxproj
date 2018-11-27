@@ -410,16 +410,20 @@
     <NMakeOutput>..\..\Binaries\HTML5\BattleTank-HTML5-Shipping.js</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\BattleTank\Private\Projectile.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\Tank.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAIController.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAimingComponent.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankBarrel.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankPlayerController.cpp" />
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankTurret.cpp" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\Projectile.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\Tank.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankAIController.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankAimingComponent.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankBarrel.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankPlayerController.h" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankTurret.h" />
     <None Include="..\..\BattleTank.uproject" />
     <None Include="..\..\Source\BattleTank.Target.cs" />
     <None Include="..\..\Source\BattleTankEditor.Target.cs" />
