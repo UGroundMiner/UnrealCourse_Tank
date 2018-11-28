@@ -1,8 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "Public/Tank.h"
 #include "Public/TankBarrel.h"
 #include "Public/Projectile.h"
-#include "Public/Tank.h"
+
 
 // Sets default values
 ATank::ATank()
@@ -35,11 +36,18 @@ void ATank::AimAt(FVector HitLocation)
 
 void ATank::Fire()
 {
-	if (!Barrel) { return; }
+	bool IsReloaded = FPlatformTime::Seconds() - LastFireTime > ReloadTimeInSeconds;
 
-	// Spawn a projectile at the socket location on the barrel
-	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("BarrelEnd")), Barrel->GetSocketRotation(FName("BarrelEnd")));
-	Projectile->LaunchProjectile(LaunchSpeed);
+	if (Barrel && IsReloaded) 
+	{ 
+		// Spawn a projectile at the socket location on the barrel
+		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("BarrelEnd")), Barrel->GetSocketRotation(FName("BarrelEnd")));
+		Projectile->LaunchProjectile(LaunchSpeed); 
+		LastFireTime = FPlatformTime::Seconds();
+		return; 
+	}
+
+
 }
 
 void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
