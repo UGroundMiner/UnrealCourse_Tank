@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeBattleTank_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/BattleTank",
 				PKG_CompiledIn | 0x00000000,
-				0x52EE486F,
-				0xCCDFD5DE,
+				0xCD01DA89,
+				0x82F62DD1,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};
